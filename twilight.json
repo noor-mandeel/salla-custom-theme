@@ -45,10 +45,9 @@
         "component-products-slider",
         "component-photos-slider",
         "component-parallax-background",
-        "component-testimonials",
-        "component-square-photos",
         "component-store-features",
-        "filters"
+        "filters",
+        "component-square-photos"
     ],
     "components": [
         {

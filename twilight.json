@@ -1,7 +1,10 @@
 {
     "version": "1.0.0",
     "theme_name": "ثيم سلة المخصص",
-    "description": "ثيم مخصص متكامل لمنصة سلة باستخدام إطار عمل Twilight",
+    "description": {
+        "ar": "ثيم مخصص متكامل لمنصة سلة باستخدام إطار عمل Twilight",
+        "en": "A fully customized theme for Salla platform using Twilight framework"
+    },
     "repo_url": "https://github.com/noor-mandeel/salla-custom-theme",
     "author_email": "support@example.com",
     "support_url": "https://example.com",
@@ -100,5 +103,10 @@
                 }
             ]
         }
-    ]
+    ],
+    "name": {
+        "ar": "ثيم سلة المخصص",
+        "en": "Salla Custom Theme"
+    },
+    "repository": "https://github.com/noor-mandeel/salla-custom-theme"
 }

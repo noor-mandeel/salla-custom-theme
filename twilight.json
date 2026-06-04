@@ -1,119 +1,118 @@
 {
-  "version": "1.0.0",
-  "name": {
-    "ar": "ثيم سلة المخصص",
-    "en": "Salla Custom Theme"
-  },
-  "description": {
-    "ar": "ثيم مخصص متكامل لمنصة سلة باستخدام إطار عمل Twilight",
-    "en": "A fully customized theme for Salla platform using Twilight framework"
-  },
-  "repository": "https://github.com/noor-mandeel/salla-custom-theme",
-  "author_email": "support@example.com",
-  "support_url": "https://example.com",
-  "settings": [
-    {
-      "type": "boolean",
-      "label": "شريط علوي داكن",
-      "id": "topnav_is_dark",
-      "format": "switch",
-      "value": false
+    "version": "1.0.0",
+    "name": {
+        "ar": "ثيم سلة المخصص",
+        "en": "Salla Custom Theme"
     },
-    {
-      "type": "string",
-      "id": "placeholder",
-      "format": "hidden",
-      "value": "images/img_placeholder.png"
+    "description": {
+        "ar": "ثيم مخصص متكامل لمنصة سلة باستخدام إطار عمل Twilight",
+        "en": "A fully customized theme for Salla platform using Twilight framework"
     },
-    {
-      "type": "string",
-      "label": "لون الزر الأساسي",
-      "id": "primary_color",
-      "format": "color",
-      "value": "#007bff"
-    }
-  ],
-  "features": [
-    "mega-menu",
-    "fonts",
-    "color",
-    "breadcrumb",
-    "unite-cards-height",
-    "component-featured-products",
-    "component-fixed-banner",
-    "component-fixed-products",
-    "component-products-slider",
-    "component-photos-slider",
-    "component-parallax-background",
-    "component-testimonials",
-    "component-square-photos",
-    "component-store-features",
-    "component-youtube",
-    "filters"
-  ],
-  "components": [
-    {
-      "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
-      "name": "hero-banner",
-      "title": "بانر البطل",
-      "icon": "sicon-image-carousel",
-      "path": "home.hero-banner",
-      "fields": [
+    "repository": "https://github.com/noor-mandeel/salla-custom-theme",
+    "author_email": "support@example.com",
+    "support_url": "https://example.com",
+    "settings": [
         {
-          "id": "title",
-          "type": "string",
-          "label": "العنوان",
-          "required": true
+            "type": "boolean",
+            "label": "شريط علوي داكن",
+            "id": "topnav_is_dark",
+            "format": "switch",
+            "value": false
         },
         {
-          "id": "subtitle",
-          "type": "string",
-          "label": "العنوان الفرعي",
-          "format": "textarea"
+            "type": "string",
+            "id": "placeholder",
+            "format": "hidden",
+            "value": "images/img_placeholder.png"
         },
         {
-          "id": "background_image",
-          "type": "string",
-          "label": "صورة الخلفية",
-          "format": "image"
-        },
-        {
-          "id": "button_text",
-          "type": "string",
-          "label": "نص الزر"
-        },
-        {
-          "id": "button_url",
-          "type": "string",
-          "label": "رابط الزر"
+            "type": "string",
+            "label": "لون الزر الأساسي",
+            "id": "primary_color",
+            "format": "color",
+            "value": "#007bff"
         }
-      ]
-    },
-    {
-      "key": "2b1b130b-5b37-422a-9683-e0fd367460c0",
-      "name": "featured-section",
-      "title": "قسم المنتجات المميزة",
-      "icon": "sicon-products",
-      "path": "home.featured-section",
-      "fields": [
+    ],
+    "features": [
+        "mega-menu",
+        "fonts",
+        "color",
+        "breadcrumb",
+        "unite-cards-height",
+        "component-featured-products",
+        "component-fixed-banner",
+        "component-fixed-products",
+        "component-products-slider",
+        "component-photos-slider",
+        "component-parallax-background",
+        "component-testimonials",
+        "component-square-photos",
+        "component-store-features",
+        "filters"
+    ],
+    "components": [
         {
-          "id": "title",
-          "type": "string",
-          "label": "العنوان",
-          "required": true
+            "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
+            "name": "hero-banner",
+            "title": "بانر البطل",
+            "icon": "sicon-image-carousel",
+            "path": "home.hero-banner",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان",
+                    "required": true
+                },
+                {
+                    "id": "subtitle",
+                    "type": "string",
+                    "label": "العنوان الفرعي",
+                    "format": "textarea"
+                },
+                {
+                    "id": "background_image",
+                    "type": "string",
+                    "label": "صورة الخلفية",
+                    "format": "image"
+                },
+                {
+                    "id": "button_text",
+                    "type": "string",
+                    "label": "نص الزر"
+                },
+                {
+                    "id": "button_url",
+                    "type": "string",
+                    "label": "رابط الزر"
+                }
+            ]
         },
         {
-          "id": "description",
-          "type": "string",
-          "label": "الوصف",
-          "format": "textarea"
-        },
-        {
-          "id": "view_all_url",
-          "type": "string",
-          "label": "رابط عرض الكل"
+            "key": "2b1b130b-5b37-422a-9683-e0fd367460c0",
+            "name": "featured-section",
+            "title": "قسم المنتجات المميزة",
+            "icon": "sicon-products",
+            "path": "home.featured-section",
+            "fields": [
+                {
+                    "id": "title",
+                    "type": "string",
+                    "label": "العنوان",
+                    "required": true
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "label": "الوصف",
+                    "format": "textarea"
+                },
+                {
+                    "id": "view_all_url",
+                    "type": "string",
+                    "label": "رابط عرض الكل"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

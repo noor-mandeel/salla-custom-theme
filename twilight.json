@@ -35,7 +35,8 @@
         "component-parallax-background",
         "component-store-features",
         "filters",
-        "component-square-photos"
+        "component-square-photos",
+        "component-fixed-banner"
     ],
     "components": [
         {

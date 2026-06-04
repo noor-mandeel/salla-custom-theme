@@ -1,0 +1,82 @@
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+    <div class="home-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>أهلاً بك في متجرنا</h1>
+                <p>اكتشف أفضل المنتجات لدينا</p>
+                <a href="/products" class="btn btn-primary">التسوق الآن</a>
+            </div>
+        </section>
+        
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <h2>المنتجات المميزة</h2>
+            <div class="products-grid">
+                {% for product in featured_products %}
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="{{ product.image }}" alt="{{ product.name }}">
+                            {% if product.badge %}
+                                <span class="badge">{{ product.badge }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="product-info">
+                            <h3>{{ product.name }}</h3>
+                            <p class="product-price">{{ product.price | currency }}</p>
+                            <a href="/products/{{ product.id }}" class="btn btn-primary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        <!-- Latest Products -->
+        <section class="latest-products">
+            <h2>أحدث المنتجات</h2>
+            <div class="products-grid">
+                {% for product in latest_products %}
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="{{ product.image }}" alt="{{ product.name }}">
+                        </div>
+                        <div class="product-info">
+                            <h3>{{ product.name }}</h3>
+                            <p class="product-price">{{ product.price | currency }}</p>
+                            <a href="/products/{{ product.id }}" class="btn btn-primary">عرض التفاصيل</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        <!-- Store Features -->
+        <section class="store-features">
+            <h2>مميزات متجرنا</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🚡</div>
+                    <h3>منتجات عالية الجودة</h3>
+                    <p>نختار أفضل المنتجات بعناية</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h3>شحن سريع</h3>
+                    <p>توصيل سريع وآمن لبابك</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💳</div>
+                    <h3>دفع آمن</h3>
+                    <p>طرق دفع آمنة وموثوقة</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📞</div>
+                    <h3>دعم عملاء</h3>
+                    <p>فريق دعم متاح طوال الوقت</p>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

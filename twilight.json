@@ -1,0 +1,112 @@
+{
+  "version": "1.0.0",
+  "theme_name": "Salla Custom Theme",
+  "repo_url": "",
+  "support_url": "",
+  "settings": [
+    {
+      "type": "boolean",
+      "label": "تفعيل الشريط العلوي الداكن",
+      "id": "topnav_is_dark",
+      "format": "switch",
+      "selected": false
+    },
+    {
+      "type": "string",
+      "id": "placeholder",
+      "format": "hidden",
+      "value": "images/img_placeholder.png"
+    },
+    {
+      "type": "string",
+      "label": "لون الزر الأساسي",
+      "id": "primary_color",
+      "format": "color",
+      "value": "#007bff"
+    },
+    {
+      "type": "string",
+      "label": "عنوان المتجر",
+      "id": "store_title",
+      "format": "text",
+      "value": "متجري"
+    }
+  ],
+  "features": [
+    "component-featured-products",
+    "component-fixed-banner",
+    "component-fixed-products",
+    "component-photos-slider",
+    "component-products-slider",
+    "component-parallax-background",
+    "component-random-testimonials",
+    "component-testimonials",
+    "component-square-photos",
+    "component-store-features",
+    "component-youtube",
+    "filters"
+  ],
+  "components": [
+    {
+      "name": "hero-banner",
+      "title": "بانر البطل",
+      "icon": "sicon-image-carousel",
+      "path": "home.hero-banner",
+      "fields": [
+        {
+          "id": "title",
+          "type": "string",
+          "label": "العنوان",
+          "required": true
+        },
+        {
+          "id": "subtitle",
+          "type": "string",
+          "label": "العنوان الفرعي",
+          "format": "textarea"
+        },
+        {
+          "id": "background_image",
+          "type": "string",
+          "label": "صورة الخلفية",
+          "format": "image"
+        },
+        {
+          "id": "button_text",
+          "type": "string",
+          "label": "نص الزر"
+        },
+        {
+          "id": "button_url",
+          "type": "string",
+          "label": "رابط الزر"
+        }
+      ]
+    },
+    {
+      "name": "featured-section",
+      "title": "قسم المنتجات المميزة",
+      "icon": "sicon-products",
+      "path": "home.featured-section",
+      "fields": [
+        {
+          "id": "title",
+          "type": "string",
+          "label": "العنوان",
+          "required": true
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "label": "الوصف",
+          "format": "textarea"
+        },
+        {
+          "id": "view_all_url",
+          "type": "string",
+          "label": "رابط عرض الكل"
+        }
+      ]
+    }
+  ]
+}

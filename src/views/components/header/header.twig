@@ -1,0 +1,45 @@
+<header class="main-header">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{{ asset('images/logo.png') }}" alt="{{ app.title }}">
+                        <span>{{ app.title }}</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/">الرئيسية</a></li>
+                        <li><a href="/products">المنتجات</a></li>
+                        <li><a href="/about">عننا</a></li>
+                        <li><a href="/contact">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="ابحث عن منتج...">
+                        <button type="submit">بحث</button>
+                    </div>
+                    
+                    <div class="user-menu">
+                        {% if customer.is_logged_in %}
+                            <a href="/customer/profile" class="user-link">حسابي</a>
+                        {% else %}
+                            <a href="/login" class="user-link">دخول</a>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="cart-icon">
+                        <a href="/cart">
+                            <span class="icon">🛒</span>
+                            <span class="cart-count">{{ cart.items_count }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

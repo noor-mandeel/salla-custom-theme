@@ -1,0 +1,20 @@
+<section class="featured-section">
+    <div class="section-header">
+        <h2>{{ section.title }}</h2>
+        {% if section.description %}
+            <p>{{ section.description }}</p>
+        {% endif %}
+    </div>
+    
+    <div class="products-grid">
+        {% for product in section.products %}
+            {% include 'components/product/card.twig' with {'product': product} %}
+        {% endfor %}
+    </div>
+    
+    {% if section.view_all_url %}
+        <div class="section-footer">
+            <a href="{{ section.view_all_url }}" class="btn btn-secondary">عرض الكل</a>
+        </div>
+    {% endif %}
+</section>

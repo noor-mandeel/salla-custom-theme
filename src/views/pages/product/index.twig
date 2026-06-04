@@ -1,0 +1,26 @@
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+    <div class="products-page">
+        <h1>المنتجات</h1>
+        
+        <div class="products-filters">
+            {# Add filters here #}
+        </div>
+        
+        <div class="products-grid">
+            {% for product in products %}
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                    </div>
+                    <div class="product-info">
+                        <h3>{{ product.name }}</h3>
+                        <p class="product-price">{{ product.price | currency }}</p>
+                        <a href="/products/{{ product.id }}" class="btn btn-primary">عرض التفاصيل</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

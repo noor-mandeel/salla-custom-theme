@@ -1,0 +1,72 @@
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+    <div class="product-detail">
+        <div class="product-gallery">
+            <img src="{{ product.image }}" alt="{{ product.name }}" class="main-image">
+            {% if product.images %}
+                <div class="product-thumbnails">
+                    {% for image in product.images %}
+                        <img src="{{ image }}" alt="{{ product.name }}" class="thumbnail">
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="product-details">
+            <h1>{{ product.name }}</h1>
+            
+            <div class="product-rating">
+                <span class="stars">{{ product.rating }}/5</span>
+                <span class="reviews-count">({{ product.reviews_count }} تقييم)</span>
+            </div>
+            
+            <div class="product-price">
+                <span class="price">{{ product.price | currency }}</span>
+                {% if product.old_price %}
+                    <span class="old-price">{{ product.old_price | currency }}</span>
+                {% endif %}
+            </div>
+            
+            <div class="product-description">
+                {{ product.description | raw }}
+            </div>
+            
+            {% if product.options %}
+                <div class="product-options">
+                    {% for option in product.options %}
+                        <div class="option">
+                            <label>{{ option.name }}</label>
+                            <select name="option_{{ option.id }}">
+                                {% for value in option.values %}
+                                    <option value="{{ value }}">{{ value }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            <div class="product-actions">
+                <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                <button class="btn btn-primary btn-add-to-cart">إضافة إلى السلة</button>
+                <button class="btn btn-secondary btn-wishlist">إضافة إلى المفضلة</button>
+            </div>
+        </div>
+    </div>
+    
+    {% if product.related_products %}
+        <div class="related-products">
+            <h2>منتجات ذات صلة</h2>
+            <div class="products-grid">
+                {% for related in product.related_products %}
+                    <div class="product-card">
+                        <img src="{{ related.image }}" alt="{{ related.name }}">
+                        <h3>{{ related.name }}</h3>
+                        <p class="price">{{ related.price | currency }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

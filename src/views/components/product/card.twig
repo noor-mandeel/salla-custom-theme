@@ -1,0 +1,26 @@
+<div class="product-card">
+    <div class="product-image">
+        <img src="{{ product.image }}" alt="{{ product.name }}" loading="lazy">
+        {% if product.badge %}
+            <span class="badge badge-{{ product.badge_type }}">{{ product.badge }}</span>
+        {% endif %}
+        <div class="product-overlay">
+            <button class="btn-wishlist" data-product-id="{{ product.id }}">إضافة للمفضلة</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h3><a href="/products/{{ product.id }}">{{ product.name }}</a></h3>
+        {% if product.rating %}
+            <div class="product-rating">
+                <span class="stars">{{ product.rating }}/5</span>
+            </div>
+        {% endif %}
+        <div class="product-price">
+            {% if product.old_price %}
+                <span class="old-price">{{ product.old_price | currency }}</span>
+            {% endif %}
+            <span class="price">{{ product.price | currency }}</span>
+        </div>
+        <a href="/products/{{ product.id }}" class="btn btn-primary btn-full">عرض التفاصيل</a>
+    </div>
+</div>

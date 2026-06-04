@@ -1,0 +1,20 @@
+{
+  "name": "salla-custom-theme",
+  "version": "1.0.0",
+  "description": "A custom Salla theme built with Twilight",
+  "main": "index.js",
+  "scripts": {
+    "dev": "salla theme preview",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "keywords": ["salla", "theme", "twilight", "ecommerce"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@salla.sa/cli": "^latest",
+    "@salla.sa/twilight-components": "^latest",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  }
+}

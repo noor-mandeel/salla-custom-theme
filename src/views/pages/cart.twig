@@ -1,0 +1,77 @@
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+    <div class="cart-page">
+        <h1>سلة التسوق</h1>
+        
+        {% if cart.items %}
+            <div class="cart-container">
+                <div class="cart-items">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>السعر</th>
+                                <th>الكمية</th>
+                                <th>الإجمالي</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in cart.items %}
+                                <tr class="cart-item">
+                                    <td>
+                                        <div class="item-info">
+                                            <img src="{{ item.image }}" alt="{{ item.name }}">
+                                            <span>{{ item.name }}</span>
+                                        </div>
+                                    </td>
+                                    <td>{{ item.price | currency }}</td>
+                                    <td>
+                                        <input type="number" value="{{ item.quantity }}" min="1" class="quantity-input">
+                                    </td>
+                                    <td>{{ (item.price * item.quantity) | currency }}</td>
+                                    <td>
+                                        <button class="btn-remove">حذف</button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="summary-box">
+                        <h3>ملخص الطلب</h3>
+                        <div class="summary-row">
+                            <span>المجموع:</span>
+                            <span>{{ cart.subtotal | currency }}</span>
+                        </div>
+                        {% if cart.discount %}
+                            <div class="summary-row">
+                                <span>الخصم:</span>
+                                <span>-{{ cart.discount | currency }}</span>
+                            </div>
+                        {% endif %}
+                        {% if cart.shipping %}
+                            <div class="summary-row">
+                                <span>الشحن:</span>
+                                <span>{{ cart.shipping | currency }}</span>
+                            </div>
+                        {% endif %}
+                        <div class="summary-row total">
+                            <span>الإجمالي:</span>
+                            <span>{{ cart.total | currency }}</span>
+                        </div>
+                        <a href="/checkout" class="btn btn-primary btn-checkout">متابعة الدفع</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="empty-cart">
+                <p>سلتك فارغة</p>
+                <a href="/products" class="btn btn-primary">العودة للتسوق</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{
+  "app": {
+    "title": "My Store"
+  },
+  "home": {
+    "welcome": "Welcome to our store"
+  }
+}

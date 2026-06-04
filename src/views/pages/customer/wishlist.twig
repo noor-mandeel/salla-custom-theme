@@ -1,0 +1,32 @@
+{% extends 'layouts/master.twig' %}
+
+{% block content %}
+    <div class="wishlist-page">
+        <h1>قائمة الرغبات</h1>
+        
+        {% if wishlist.items %}
+            <div class="wishlist-items">
+                {% for item in wishlist.items %}
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="{{ item.image }}" alt="{{ item.name }}">
+                        </div>
+                        <div class="item-info">
+                            <h3>{{ item.name }}</h3>
+                            <p class="price">{{ item.price | currency }}</p>
+                            <div class="item-actions">
+                                <button class="btn btn-primary btn-add-to-cart">إضافة إلى السلة</button>
+                                <button class="btn btn-secondary btn-remove">حذف</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-wishlist">
+                <p>لم تضف أي منتجات بعد</p>
+                <a href="/products" class="btn btn-primary">اكتشف المنتجات</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

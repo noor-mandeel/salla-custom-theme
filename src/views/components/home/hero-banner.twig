@@ -1,0 +1,18 @@
+<section class="hero-banner">
+    <div class="hero-content">
+        <h1 class="hero-title">{{ hero.title }}</h1>
+        <p class="hero-subtitle">{{ hero.subtitle }}</p>
+        {% if hero.button_text %}
+            <a href="{{ hero.button_url }}" class="btn btn-primary btn-lg">{{ hero.button_text }}</a>
+        {% endif %}
+    </div>
+    {% if hero.background_image %}
+        <style>
+            .hero-banner {
+                background-image: url('{{ hero.background_image }}');
+                background-size: cover;
+                background-position: center;
+            }
+        </style>
+    {% endif %}
+</section>

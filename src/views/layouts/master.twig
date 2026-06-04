@@ -1,28 +1,11 @@
-{# This is the master layout file for the Salla theme #}
 <!DOCTYPE html>
-<html lang="{{ app.locale }}" dir="{{ app.dir }}">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ app.title }}</title>
-    {# Add your CSS files here #}
-    <link rel="stylesheet" href="{{ asset("styles/app.css") }}">
+    <title>Test Theme</title>
 </head>
 <body>
-<div style="background: yellow; color: black; padding: 20px; text-align: center; font-size: 30px; z-index: 9999; position: relative;">
-    تم تفعيل الثيم بنجاح! 🚀
-</div>
-    {% include "components/header/header.twig" %}
-
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    {% include "components/footer/footer.twig" %}
-
-    {# Add your JS files here #}
-    <script src="{{ asset("js/app.js") }}"></script>
+    <div style="background: yellow; color: black; padding: 50px; text-align: center; font-size: 40px;">
+        تم الاتصال بنجاح! 🚀 النسخة المبسطة تعمل.
+    </div>
 </body>
-
-
 </html>
